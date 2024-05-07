@@ -1,2 +1,2 @@
-# JsSiteTemplate
-Site Template for JS Projects
+# FizzBuzz
+Coding Challenge
