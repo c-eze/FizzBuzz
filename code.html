@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Chikere Ezekannagha</title>
+    <title>Fizz Buzz: A Coding Project By Chikere Ezekannagha</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +28,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand logoFont" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" 
-            width="32" height="30"> APP NAME</a>
+            width="32" height="30"> FIZZ BUZZ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/c-eze/FizzBuzz">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="#">About</a>
@@ -57,21 +57,106 @@
 <!-- === Main Section === -->
 <main class="flex-shrink-0">
     <div class="container py-4 px-5 mt-5">
-        <h1 class="border-1 border-bottom border-dark">The Code for APP NAME</h1>
+        <h1 class="border-1 border-bottom border-dark">The Code for FIZZ BUZZ</h1>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //Call Hello World
-                    function HelloWorld() {
-                        alert("Hello World");
+                    //get the values from the Page
+                    //starts or controller function
+                    function getValues() {
+                        //get values from the page
+                        let fizzValue = document.getElementById("fizzValue").value;
+                        let buzzValue = document.getElementById("buzzValue").value; 
+                    
+                        //Need to validate input
+                        //parse into integers
+                        fizzValue = parseInt(fizzValue);
+                        buzzValue = parseInt(buzzValue);
+                    
+                        if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
+                            //call generateNumbers
+                            let numbers = generateNumbers();
+                    
+                            //call displayNumbers
+                            displayNumbers(fizzValue, buzzValue, numbers);
+                        } else {
+                            alert("You must enter integers");
+                        }
+                    
+                    }
+                    
+                    //logic function
+                    function generateNumbers() {
+                        let numbers = [];
+                    
+                        //get all numbers from start to end
+                        
+                        for (let index = 1; index <= 100; index++) { 
+                            //execute in a loop until index = eValue
+                            numbers.push(index);
+                        }
+                    
+                        return numbers;
+                    }
+                    
+                    
+                    //display or view functions
+                    function displayNumbers(fValue, bValue, numbers) {
+                        let templateRows = "";
+                    
+                        for (let index = 0; index < numbers.length; index++) {
+                            let className = "";
+                            let number = numbers[index];
+                    
+                            if (index % 5 == 0) {
+                                templateRows += `<tr>`;
+                            }
+                    
+                            if (number % fValue == 0 && number % bValue == 0) {
+                                className = "fizzBuzz";
+                                templateRows += `<td class="${className}">${className}</td>`;
+                            }
+                            else if (number % fValue == 0) {
+                                className = "fizz";
+                                templateRows += `<td class="${className}">${className}</td>`;
+                            }
+                            else if (number % bValue == 0){
+                                className = "buzz";
+                                templateRows += `<td class="${className}">${className}</td>`;
+                            }
+                            else {
+                                templateRows += `<td class="${className}">${number}</td>`;
+                            } 
+                    
+                            if ((index + 1) % 5 == 0) {
+                                templateRows += `</tr>`;
+                            }
+                        }
+                    
+                        document.getElementById("results").innerHTML = templateRows;
+                    
                     }
                 </code>
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <p>The Code is structured in three functions.</p>
+                <h5>getValues()</h5>
+                <p>getValues is a controller function that gets the user's fizz and buzz values from the page so
+                    that they can be displayed as multiples for the numbers 1 to 100. It parses the fizz and buzz
+                    values as integers and then passes them along with an array of numbers 1 to 100 to a display 
+                    function where they are all printed to the screen.    
+                </p>
+                <h5>generateNumbers()</h5>
+                <p>generateNumbers is a logic function that generates and transfers numbers 1 to 100 into an array using 
+                    a for loop, and then returns the number array to the calling function. 
+                </p>
+                <h5>displayNumbers(fValue, bValue, numbers)</h5>
+                <p>displayNumbers is a display function that displays fizz and buzz values for the numbers 1 to 100 on
+                    to the page. Both the fizz and buzz values are passed into the function along with the number array. 
+                    These values are processed using a for loop and if-then-else conditional statements. They are
+                    templated on to the page using different colors to maximize user readability.
+                </p>
             </div>
         </div>
     </div>

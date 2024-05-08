@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Chikere Ezekannagha</title>
+    <title>Fizz Buzz: A Coding Project By Chikere Ezekannagha</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +27,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand logoFont" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" 
-            width="32" height="30"> APP NAME</a>
+            width="32" height="30"> FIZZ BUZZ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
                     <a class="nav-link" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/c-eze/FizzBuzz">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="#">About</a>
@@ -58,27 +58,29 @@
     <div class="container mt-5">
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col col-lg-4 border-end border-2">
-                <h1>App Name</h1>
+                <h1>Fizz Buzz</h1>
                 <p class="lead">
-                    A JavaScript coding exercise using loops. 
+                    A JavaScript coding program that prints the numbers from 1 to 100 and displays multiples of '3' as 
+                    <strong>"Fizz"</strong>, multiples of '5' as <strong>"Buzz"</strong>, and then multiples of both '3' 
+                    and '5' as <strong>"FizzBuzz"</strong>. 
                 </p>
                 <h2 class="mt-5">Instructions</h2>
-                <p>Enter a starting value and a ending value. Press the button and the values will appear.</p>
+                <p>Enter a fizz and a buzz value. Press the button and the values will appear.</p>
             </div>
             <div class="col col-lg-8">
                 <div>
                     <h5>Enter Values</h5>
                     <form class="row gy-2 gx-3">
                         <div class="col">
-                            <input id="startValue" type="number" class="form-control" placeholder="Start Value" 
-                                value="0" aria-label="Start Value">
+                            <input id="fizzValue" type="number" class="form-control" placeholder="Fizz Value" 
+                                value="3" aria-label="Fizz Value">
                         </div>
                         <div class="col">
-                            <input id="endValue" type="number" class="form-control" placeholder="End Value" 
-                                value="100" aria-label="End Value">
+                            <input id="buzzValue" type="number" class="form-control" placeholder="Buzz Value" 
+                                value="5" aria-label="Buzz Value">
                         </div>
                         <div class="col-12 d-flex justify-content-end">
-                            <button id="btnSubmit" type="button" class="btn btn-lg btnColor">Display the Evens</button>
+                            <button id="btnSubmit" type="button" class="btn btn-lg btnColor">Buzz It</button>
                         </div>
                     </form>
                     <h4 class="mt-5 border-bottom border-2">Results</h4>
@@ -120,6 +122,9 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="/js/site.js"></script> 
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
+    </script>
 </body>
 
 </html>

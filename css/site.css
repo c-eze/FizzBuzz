@@ -1,7 +1,7 @@
 :root {
     /* colors */
     --primary-color: #1d5888;
-    --secondary-color: #FF3131;
+    --secondary-color: #0077B6;
     --heading-bg-color: #e2e3e5; /* Bootstrap Secondary Sub Color */
     --heading-color: #6c757d; 
     --dark-color: #292929;
@@ -15,13 +15,20 @@
     color: white;
 }
 
-.odd {
-    font-weight: 100;
+.fizz {
+    color: darkgreen;
+    text-transform: capitalize;
 }
 
-.even {
+.buzz {
+    color: darkblue;
+    text-transform: capitalize;
+}
+
+.fizzBuzz {
+    color: red;
     font-weight: bold;
-    font-size: large;
+    text-transform: capitalize;
 }
 
 .logoFont {
